@@ -3,11 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <title>君瑞's Blog</title>
+    <style>
+    body {
+        background-color: #c2dcfc; 
+        font-family: sans-serif; 
+    }
+    nav {
+        display: flex; 
+        justify-content: space-around; 
+       
+        margin-bottom: 20px; 
+        padding: 10px 0;
+      
+        flex-wrap: wrap; 
+    }
+
+ 
+    #main-title {
+        color: #1facaad7;
+        border: 2px solid #007bff;
+        background-color: #e6f7ff;
+        border-radius: 15px; 
+        padding: 15px 25px; 
+        display: table; 
+        margin: 20px auto; 
+        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
+    }
+    #title {
+        color: #1facaad7;
+        border: 2px solid #7ebcfd;
+        background-color: #e6f7ff;
+        border-radius: 15px; 
+        padding: 5px 5px; 
+        display: table; 
+        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    nav a {
+        display: inline-block; 
+        
+        padding: 8px 10px; 
+    
+        margin: 5px; 
+        
+        border: 1.5px solid #007bff; 
+        background-color: #e6f7ff; 
+        border-radius: 5px; 
+        
+        text-decoration: none; 
+        color: #418dd0; 
+        
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        
+        white-space: nowrap; 
+    }
+
+    nav a:hover {
+        background-color: #778cce; 
+        color: white; 
+    }
+    
+    header h1 {
+        margin: 0;
+    }
+
+    table {
+        border-collapse: collapse; 
+        width: 100%;
+        margin-top: 15px; 
+    }
+
+    th, td {
+        border: 1px solid #838080;
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #f0f0f0;
+        font-weight: bold;
+    }
+    .table-no-spacing {
+        border-spacing: 0;
+    }
+    #section6 figure,#section7 figure {
+        display: inline-block; 
+        width: 280px;
+        margin: 10px;
+        padding: 10px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s; 
+    }
+    #section6 img,#section7 img {
+        width: 100%; 
+        height: auto;
+        border-radius: 8px; 
+        object-fit: cover; 
+    }
+
+    #section6 figure:hover,#section7 figure:hover {
+        transform: translateY(-5px); 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+ 
+    #section6 figcaption,#section7 figcaption {
+        margin-top: 8px;
+        font-style: italic;
+        color: #555;
+        font-size: 0.9em;
+    }
+</style>
 </head>
 <body>
-    <!-- 頁頭區 -->
     <header>
-        <h1>洪君瑞的個人部落格</h1>
+        <h1 id="main-title">洪君瑞的個人部落格</h1>
         <nav>
             <a href="#section1">關於我</a>
             <a href="#section2">工作經歷</a>
@@ -18,13 +130,11 @@
             <a href="#section7">更多資訊</a>
         </nav>
     </header>
-    
-    <!-- 主內容區 -->
     <main>
         <!-- 個人介紹 -->
         <article id="section1">
             <header>
-                <h2>關於我</h2>
+                <h2 id="title">關於我</h2>
                 <p>在此部落格中，將分享我在工作上及生活中的點滴。</p>
             </header>
             <section>
@@ -45,7 +155,7 @@
         <!-- 工作經歷介紹 -->
         <article id="section2">
             <header>
-                <h2>工作經歷</h2>
+                <h2 id="title">工作經歷</h2>
             </header>
             <section>
                 <table>
@@ -69,7 +179,7 @@
         <!-- 技能介紹 -->
         <article id="section3">
             <header>
-                <h2>工作技能</h2>
+                <h2 id="title">工作技能</h2>
             </header>
             <section>
                 <table>
@@ -94,33 +204,36 @@
         </article>
 
         <!-- 音樂作品介紹 -->
-        <article id="section4">
-            <h2>音訊介紹</h2>
-            <audio controls>
-                <!-- 改為你的作品 -->
-                <source src="asset\music\Desert Echoes.mp3" type="audio/mpeg">
-            </audio>
-        </article>
-
-        <!-- 視訊作品介紹 -->
-        <article id="section5">
-            <h2>視訊介紹</h2>
-            <video controls width="300">
-                <!-- 改為你的作品 -->
-                <source src="asset\video\Fly High 資科男排ver. 【排球少年第二季OP 2】 (2).mp4" type="audio/mpeg">                
-            </video>
+        <article id="section4-5">
+            <h2 id="title">音訊與視訊作品</h2>
+            <table class="media-table">
+                <tr>
+                    <th>音樂作品：Desert Echoes</th>
+                    <th>視訊作品：Fly High</th>
+                </tr>
+                <tr>
+                    <td class="media-cell">
+                        <audio controls>
+                            <source src="asset\music\Desert Echoes.mp3" type="audio/mpeg">
+                            </audio>
+                    </td>
+            
+                    <td class="media-cell">
+                        <video controls width="350"> <source src="asset\video\Fly High 資科男排ver. 【排球少年第二季OP 2】 (2).mp4" type="video/mp4"> 
+                        </video>
+                    </td>
+                </tr>
+            </table>
         </article>
 
         <!-- 圖片作品集介紹與描述 -->
         <article id="section6">
-            <h2>日常照片集</h2>
+            <h2 id="title">日常照片集</h2>
             <figure style="display:inline-block;">
-                <!-- 改為你的作品 -->
                 <img src="asset\image\77B125F3-47FB-4420-BA6A-870C6F58295B.jpg" alt="山間風景" width="200">
                 <figcaption>國北聖誕樹</figcaption>
             </figure>
             <figure style="display:inline-block;">
-                <!-- 改為你的作品 -->
                 <img src="asset\image\2FF08F46-1B54-4B9D-AA8A-78A0CBF9B3F7.png" alt="小鎮景色" width="300">
                 <figcaption>開心遊戲!!!!</figcaption>
             </figure>
@@ -128,12 +241,16 @@
 
         <!-- 嵌入PDF文件 -->
         <article id="section7">
-            <h2>更多資訊</h2>
-            <h3>以下是我的Flutter 實作</h3>
+            <h2 id="title">更多資訊 ⮕ Flutter 實作</h2>
             <!-- 改為你的作品 -->
-            <embed src="asset\image\S__158244867_0.jpg" width="150">
-
-            <embed src="asset\image\S__158244868_0.jpg" width="150">
+            <figure style="display:inline-block;">
+                <img src="asset\image\S__158244867_0.jpg">
+                <figcaption>滑動頁面實作</figcaption>
+            </figure>
+            <figure style="display:inline-block;">
+                <img src="asset\image\S__158244868_0.jpg">
+                <figcaption>個人名片</figcaption>
+            </figure>           
             
         </article>
 
@@ -148,9 +265,16 @@
     </main>
     
     <!-- 頁尾區 -->
-    <footer>
-        <p>聯絡我們 : s111316012@stu.ntue.edu.tw</p>
-        <time datetime="2024-11-30">最後更新日期：2024年11月30日</time>
-    </footer>
+    <table>
+        <tr>
+            <td>聯絡我們</td>
+            <td>s111316012@stu.ntue.edu.tw</td>
+        </tr>
+        <tr>
+            <td>最後更新日期</td>
+            <td>2024年11月30日</td>
+        </tr>
+    </table>
+
 </body>
 </html>
